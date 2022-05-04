@@ -1,0 +1,7 @@
+grocery = ['0. bread', '1. milk', '2. yogurt', '3. cereal' ]    
+print("Elements in odd position: ");       
+    
+for i in range(1, len(grocery), 2):    
+    print(grocery[i]);     
+
+

@@ -8,7 +8,7 @@ def sampled(input_data: Iterable[T], sample_size: int) -> List[T]:
     iter: Iterator[T] = iter(input_data)
     sample: List[T] = list()
     i = 0
-    while len(sample_size) < sample_size:
+    while len(sample) < sample_size:
         try:
             e = next(iter)
             sample.append(e)
@@ -21,7 +21,7 @@ def sampled(input_data: Iterable[T], sample_size: int) -> List[T]:
             new_e = next(iter)
             j += 1
             r = random()
-            selection_prob = sample_size / j
+            selection_prob = sample_size / (j - 1)
             if r >= selection_prob:
                 # pick element
                 replacement = randint(0, sample_size - 1)
@@ -30,10 +30,10 @@ def sampled(input_data: Iterable[T], sample_size: int) -> List[T]:
             break
     return sample
 
-test_list = list(range(100))
-positions = {i: 0 for i, e in enumerate(test_list)}
-REPETITIONS = 500000
 SAMPLE_SIZE = 10
+test_list = list(range(SAMPLE_SIZE))
+positions = {i: 0 for i, e in enumerate(test_list)}
+REPETITIONS = 500
 
 positions = {i: 0 for i, e in enumerate(test_list)}
 for i in range(REPETITIONS):
@@ -49,5 +49,9 @@ sample = {}
 for i, sum in positions.items():
     positions[i] = sum / REPETITIONS
 print(f'positions {positions}')
+deltas = {i: v - positions[0] for i, v in positions.items()}
+
+print(f'deltas: {deltas}')
+print(f'deltas: {max(deltas.values())}')
 
 

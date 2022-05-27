@@ -1,11 +1,11 @@
 # fisher-yates shuffle https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle#The_modern_algorithm
-from random import randint
+from random import randint, shuffle
 from typing import List, TypeVar
 
 T = TypeVar('T')
 
 def shuffle(data: List[T]) -> List[T]:
-    for i in range(len(data) - 1, 1, -1):
+    for i in range(len(data) - 1, 0, -1):
         j = randint(0, i)
         if j != i:
             data[i], data[j] = data[j], data[i]

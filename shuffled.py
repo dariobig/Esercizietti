@@ -7,7 +7,7 @@ def shuffled(input_list: List[T]) -> List[T]:
     """Fisher-yates shuffle https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle#The_modern_algorithm"""
     randomized: List[T] = list(input_list)
     l = len(randomized)
-    for i in range(l - 1, -1, -1):
+    for i in range(l - 1, 0, -1):
         j = randint(0, i)
         if i != j:
             val_i, val_j = randomized[i], randomized[j]
@@ -31,5 +31,9 @@ averages = {}
 for i, sum in positions.items():
     averages[i] = sum / REPETITIONS
 print(f'averages {averages}')
+deltas = {i: v - averages[0] for i, v in averages.items()}
+
+print(f'deltas: {deltas}')
+print(f'deltas: {max(deltas.values())}')
 
 

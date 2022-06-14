@@ -4,13 +4,12 @@
 def nomi():
 	x = input("Enter your name ")
 	if x == "Sara" or x=="Dario":
-		print (f"Hello {x}")
+		print (f"Welcome {x}!")
 	else:
 		print ("Your name is not in the list.")
 		return
-
 #Write a program that asks the user for a number n and prints the sum of the numbers 1 to n
-	pick_a_number = input(f"Draw a number {x} ")
+	pick_a_number = input(f"Please, pick a number {x} ")
 	z = int(pick_a_number)
 	total=0
 	for i in range(0, z+1, 1):

@@ -1,5 +1,4 @@
 [tool.poetry]
-<<<<<<< HEAD
 name = "esercizietti"
 version = "0.1.0"
 description = ""
@@ -9,23 +8,11 @@ authors = ["Dario Bigongiari <dariobig@amazon.com>"]
 python = "^3.9"
 spacy = "^3.2.4"
 google-api-python-client = "^2.48.0"
+fastapi = "^0.78.0"
 
 [tool.poetry.dev-dependencies]
 black = "^22.3.0"
 pylint = "^2.13.4"
-=======
-name = "esercizi"
-version = "0.1.0"
-description = ""
-authors = ["Your Name <you@example.com>"]
-
-[tool.poetry.dependencies]
-python = "^3.10"
-pandas = "^1.4.1"
-
-[tool.poetry.dev-dependencies]
-pytest = "^5.2"
->>>>>>> a35a0fb958381f69cb32fa9c3e6ae1040f88c48b
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

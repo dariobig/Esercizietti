@@ -13,7 +13,10 @@
                 "server:app"
             ],
             "jinja": true,
-            "justMyCode": true
+            "justMyCode": true,
+            "autoReload": {
+                "enable": true
+            }
         }
     ]
 }
